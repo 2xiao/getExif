@@ -1,3 +1,8 @@
+#demo: [http://xxwu.tech/getExif/getExif.html](http://xxwu.tech/getExif/getExif.html)
+
+
+#GBK to UNICODE
+
 ![](http://ww4.sinaimg.cn/large/006tNc79ly1fftwu9cvqfj30p00iyn1x.jpg)
 
 ## 正确的信息
