@@ -20,7 +20,11 @@ byline = 谢环驰
 
 ## 直接getUint8()
 
+<<<<<<< HEAD
 > getUint8()每8个比特提取为一个字，非汉字是正确的，但是直接将汉字分为两个Unicode，被编译成拉丁文
+=======
+>getUint8()每8个比特提取为一个字，非汉字是正确的，但是直接将汉字分为两个Unicode，被编译成拉丁文
+>>>>>>> gh-pages
 
 ```
 function getStringFromDB(buffer, start, length) {
