@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<script type="text/javascript" src="exif.js"></script>
+<style type="text/css">
+	.image1{
+		width: 200px;
+		height: 300px;
+		padding-left: 10px;
+	}
+	#output{
+		background-color: lightblue;
+		width: 100%;
+		height: 500px;
+		font-size: 10px;
+	}
+</style>
+</head>
+<body>
+	<input id="file-input" type="file" />
+	<div>
+		<img src="./image/y/1120972345_1494810940752_title0h.jpg" class="image1">		
+		<img src="./image/n/1120971977_14948126034431n.jpg" class="image1">		
+		<img src="./image/y/1120970748_14947805426031n.jpg" class="image1">		
+		<img src="./image/n/13694635-c9fd-4ad8-97bd-27ca8a8fc3f5.jpg" class="image1">		
+		<img src="./image/n/1bd1790c887e7f0_size84_w711_h1000 2.jpg" class="image1">		
+	</div>
+	<p id="output"></p>
+	<script>
+	document.getElementById("file-input").onchange = function(e) {
+	    EXIF.getData(e.target.files[0], function() {
+	        var IptcObject = EXIF.getAllIptcTags(this);
+	        var IptcString = "";
+	        for(var tag in IptcObject){
+	        	var IptcText = IptcObject[tag];
+	        	IptcString += tag + " = " + IptcText + "<br>";
+	        }
+	        document.getElementById("output").innerHTML = IptcString;
+	    });
+	}
+	var img = document.getElementsByClassName("image1");
+	for(var i = 0 ; i < img.length ; i++){
+		img[i].onclick = function(e) {
+		    EXIF.getData(e.target, function() {
+		        var IptcObject = EXIF.getAllIptcTags(this);
+		        var IptcString = "";
+		        for(var tag in IptcObject){
+		        	var IptcText = IptcObject[tag];
+		        	IptcString += "\n" + tag + " = " + IptcText + "\n";
+		        }
+		        document.getElementById("output").innerHTML = IptcString;
+		    });
+		}
+	}
+	
+	var htmlentities = {
+			/**
+			 * Converts a string to its html characters completely.
+			 *
+			 * @param {String} str String with unescaped HTML characters
+			 **/
+			encode : function(str) {
+				var buf = [];
+				
+				for (var i=str.length-1;i>=0;i--) {
+					buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
+				}
+				
+				return buf.join('');
+			},
+			/**
+			 * Converts an html characterSet into its original character.
+			 *
+			 * @param {String} str htmlSet entities
+			 **/
+			decode : function(str) {
+				return str.replace(/&#(\d+);/g, function(match, dec) {
+					return String.fromCharCode(dec);
+				});
+			}
+		};
+	</script>
+</body>
+</html>
