@@ -21746,19 +21746,6 @@ function gbk2unicode(str){
         return outstr
     }
     
-    // function getStringDataFromDB(buffer, start, length) {
-    //     console.log(`%s-%s`,start,length)
-    //     var outstr = "";
-    //     //for (n = start; n < start+length; n++) {
-    //         //outstr += String.fromCharCode(buffer.getUint8(n));
-    //          //outstr += buffer.getUint8(n);
-    //          outstr+=buffer.buffer.toString(0,16);
-    //          console.log(outstr);
-    //          return outstr;
-    //          //break;
-    //     //}
-    //     //return outstr;
-    // }
     function getDataFromDB(buffer, start, length) {
         var outstr = "";
         var arr = buffer.split(' ');
