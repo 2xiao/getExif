@@ -40,19 +40,19 @@ document.getElementById("file-input").onchange = function(e) {
 
 **提取出的版权信息为：**
 >captionWriter = 李琰 
-
+>
 >keywords = 中国 
-
+>
 >headline = （一带一路·高峰论坛）习近平会见波兰总理希德沃 
-
+>
 >dateCreated = 20170512 
-
+>
 >copyright = 新华通讯社 
-
+>
 >category = 18 
-
+>
 >caption = 新华社照片，北京，2017年5月12日 习近平会见波兰总理希德沃 5月12日，国家主席习近平在北京人民大会堂会见来华出席“一带一路”国际合作高峰论坛的波兰总理希德沃。 新华社记者 谢环驰 摄 
-
+>
 >byline = 谢环驰
 
 ##中文编码乱码
@@ -77,7 +77,7 @@ function getFinalStringFromDB(buffer, start, length) {
     return outstr
 }
 
-```  
+```
 如果直接getUint8()，getUint8()每8个比特提取为一个字，非汉字是正确的，但是直接将汉字分为两个Unicode，则图片中的汉字被编译成拉丁文
 
 ```
