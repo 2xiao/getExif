@@ -1,6 +1,7 @@
 ##版权藏在哪儿
 ###1.图片水印
 ###2.图片元数据
+
 数码图片由一组数字数据组成,记录着图片的像素、色彩、灰度等，除此之外，数码图片还有一组隐藏于幕后的数 字，这就是元数据（Data about Data，描述数据的数据）。图片元数据中记录着创作源设备、日期、位置、作者、版权等等。某些格式的图片如TIFF(tagged image file format)，JPG，PNG(portable network graphics)，EXIF (exchangeable image file)支持在文件中保存标 题、关键词、类别、作者、版权、URL等元数据，不影响图片的正常显示。可用于识别图片版权信息。使用Acdsee，Photoshop等图像软件都可加入这些信息，程序员还可以通过编程接口灵活添加这些信息。不过，利用图片元数据空间保存的图片版权信息，任何人都可以浏览修改，使它只能是一种辅助性或者隐蔽性的版权保护方法。 
 
 图 片 文 件 最 常 用 到 的 元 数 据 包 括 EXIF（ Exchangeable Image File Format，即可交换图像文件格式）和IPTC（Inter National Press Telecommunications Council，即国际出版 电讯委员会）。EXIF信息由图片生成设备产生，主要记录图片 生成设备的参数，比如光圈、快门、曝光时间、ISO感光值、焦 长等等。而IPTC信息包含了创作者姓名、版权信息、拍摄地 点、关键字等内容。图片创作者则可使用Acdsee，Photoshop等 图像编辑软件在EXIF或IPTC中添加相关信息以保护作品版权。 不过，图片元数据容量有限不适宜添加较多的信息内容，而且 使用元数据添加的信息很容易为其他用户修改，因此只能作为 一种辅助性的版权保护方法。
@@ -14,7 +15,9 @@
 ##获取图片的元数据
 示例见：[使用示例](http://xxwu.tech/getExif/getExif.html)
 
+
 使用[exif.js](https://github.com/SmartDoubleXiao/getExif/blob/master/exif.js)提供的方法,`EXIF.getData(img, callback)`和`EXIF.getAllIptcTags(img)`，如：
+
 
 ```
 document.getElementById("file-input").onchange = function(e) {
