@@ -67,23 +67,17 @@
 	var pic = document.getElementById("pic");
 	var imgSrc = document.getElementById("img-src");
 	var submit = document.getElementById('submit');
+	var image2 = document.createElement("img");
+		image2.id = "image2";
+		image2.width ="500px";	
+		pic.appendChild(image2);
 	submit.onclick = function(){
-		if(document.getElementById("image2") == undefined){
-			var image2 = document.createElement("img");
-			image2.src = imgSrc.value;
-			image2.id = "image2";
-			image2.width ="500px";
-			image2.onload = function (){
-	        	pic.appendChild(image2);
-	            EXIF.getData(image2, callback);
-	        }
-		}else{
-			image2.src = imgSrc.value;
-			image2.onload = function (){
-	            EXIF.getData(image2, callback);
-	        }
-		}   
-	}
+		image2.src = imgSrc.value;
+		image2.onload = function (){
+			image2.width ="500px";	        	
+            EXIF.getData(image2, callback);
+        }
+    }
 	</script>
 </body>
 </html>
