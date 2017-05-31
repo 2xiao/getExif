@@ -17,10 +17,6 @@
 		width: 80%;
 		padding: 20px;
 	}
-	.image2{
-		width: 500px;
-		padding: 20px;
-	}
 	#output{
 		width: 90%;
 		font-size: 20px;
@@ -71,21 +67,16 @@
 	var pic = document.getElementById("pic");
 	var imgSrc = document.getElementById("img-src");
 	var submit = document.getElementById('submit');
+	var image2 = document.createElement("img");
+		image2.id = "image2";
+		image2.width ="500px";
+		pic.appendChild(image2);
 	submit.onclick = function(){
-		if(document.getElementById("image2") == null){
-			var image2 = document.createElement("img");
 			image2.src = imgSrc.value;
-			image2.id = "image2";
-			image2.onload = function (){
-	        	pic.appendChild(image2);
+			image2.onload = function (){	        	
 	            EXIF.getData(image2, callback);
 	        }
-		}else{
-			image2.src = imgSrc.value;
-			image2.onload = function (){
-	            EXIF.getData(image2, callback);
-	        }
-		}   
+	    }  
 	}
 	</script>
 </body>
