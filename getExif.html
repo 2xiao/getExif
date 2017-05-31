@@ -6,6 +6,7 @@
 <style type="text/css">
 	.left{
 		float: left;
+		width: 50%;
 	}
 	.right{
 		background-color: lightblue;
@@ -13,13 +14,13 @@
 		width: 50%;
 	}
 	.image1{
-		width: 500px;
+		width: 80%;
 		padding: 20px;
 	}
 	#output{
-		width: 100%;
+		width: 90%;
 		font-size: 20px;
-		padding: 20px;
+		margin: 20px;
 	}
 </style>
 </head>
@@ -67,15 +68,21 @@
 	var imgSrc = document.getElementById("img-src");
 	var submit = document.getElementById('submit');
 	submit.onclick = function(){
-		var image2 = document.createElement("img");
-		image2.src = imgSrc.value;
-		image2.id = "image2";
-		image2.width = 500;
-
-        image2.onload = function (){
-        	pic.appendChild(image2);
-            EXIF.getData(image2, callback);
-        }
+		if(document.getElementById("image2") == undefined){
+			var image2 = document.createElement("img");
+			image2.src = imgSrc.value;
+			image2.id = "image2";
+			image2.width ="500px";
+			image2.onload = function (){
+	        	pic.appendChild(image2);
+	            EXIF.getData(image2, callback);
+	        }
+		}else{
+			image2.src = imgSrc.value;
+			image2.onload = function (){
+	            EXIF.getData(image2, callback);
+	        }
+		}   
 	}
 	</script>
 </body>
